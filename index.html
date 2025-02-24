@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Universal Comment Remover (No External Libraries)</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Universal Comment Remover</h1>
+
+    
+    <label for="languageSelect" class="label">Select Language:</label>
+    <select id="languageSelect" class="select">
+      <option value="" disabled selected>Select a language</option>
+      <option value="c">C</option>
+      <option value="cpp">C++</option>
+      <option value="csharp">C#</option>
+      <option value="java">Java</option>
+      <option value="javascript">JavaScript</option>
+      <option value="typescript">TypeScript</option>
+      <option value="python">Python</option>
+      <option value="php">PHP</option>
+      <option value="ruby">Ruby</option>
+      <option value="perl">Perl</option>
+      <option value="shell">Shell/Bash</option>
+      <option value="go">Go</option>
+      <option value="swift">Swift</option>
+      <option value="kotlin">Kotlin</option>
+      <option value="rust">Rust</option>
+      <option value="html">HTML</option>
+      <option value="css">CSS</option>
+      
+    </select>
+
+    
+    <label for="codeInput" class="label">Input Code:</label>
+    <textarea
+      id="codeInput"
+      class="textarea"
+      rows="12"
+      placeholder="Paste or drop your code here..."
+    ></textarea>
+    <div class="file-upload-row">
+      <input type="file" id="fileInput" class="file-input" accept=".c,.cpp,.cs,.java,.js,.ts,.py,.php,.rb,.pl,.sh,.go,.swift,.kt,.rs,.html,.css,.txt" />
+      <button id="uploadBtn" class="button">Upload File</button>
+      <span id="uploadStatus" class="status"></span>
+    </div>
+
+    
+    <label for="processedCode" class="label">Processed Code:</label>
+    <pre id="processedCode" class="code-display"></pre>
+
+    
+    <div class="button-row">
+      <button id="removeCommentsBtn" class="button primary">Remove Comments</button>
+      <button id="copyBtn" class="button">Copy to Clipboard</button>
+      <button id="downloadBtn" class="button">Download</button>
+      <button id="resetBtn" class="button">Reset</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
