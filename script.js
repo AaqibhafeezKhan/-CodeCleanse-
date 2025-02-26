@@ -12,61 +12,50 @@ function removeComments(code, language) {
     case 'kotlin':
     case 'swift':
     case 'rust':
-    
-    processed = processed.replace(/\/\/[^\n\r]*/g, '');
-    processed = processed.replace(/\/\*[\s\S]*?\*\
-    break;
-    
+      processed = processed.replace(/\/\/[^\n\r]*/g, '');
+      processed = processed.replace(/\/\*[\s\S]*?\*\//g, '');
+      break;
+      
     case 'python':
-    
-    processed = processed.replace(/#[^\n\r]*/g, '');
-    
-    
-    break;
-    
+      processed = processed.replace(/#[^\n\r]*/g, '');
+      break;
+      
     case 'shell':
-    
-    processed = processed.replace(/#[^\n\r]*/g, '');
-    break;
-    
+      processed = processed.replace(/#[^\n\r]*/g, '');
+      break;
+      
     case 'php':
-    
-    processed = processed.replace(/\/\/[^\n\r]*/g, '');
-    processed = processed.replace(/#[^\n\r]*/g, '');
-    processed = processed.replace(/\/\*[\s\S]*?\*\
-    break;
-    
+      processed = processed.replace(/\/\/[^\n\r]*/g, '');
+      processed = processed.replace(/#[^\n\r]*/g, '');
+      processed = processed.replace(/\/\*[\s\S]*?\*\//g, '');
+      break;
+      
     case 'perl':
-    
-    processed = processed.replace(/#[^\n\r]*/g, '');
-    break;
-    
+      processed = processed.replace(/#[^\n\r]*/g, '');
+      break;
+      
     case 'ruby':
-    
-    processed = processed.replace(/#[^\n\r]*/g, '');
-    
-    processed = processed.replace(/^=begin[\s\S]*?^=end\s/gm, '');
-    break;
-    
+      processed = processed.replace(/#[^\n\r]*/g, '');
+      processed = processed.replace(/^=begin[\s\S]*?^=end\s/gm, '');
+      break;
+      
     case 'html':
-    
-    processed = processed.replace(/<!--[\s\S]*?-->/g, '');
-    break;
-    
+      processed = processed.replace(/<!--[\s\S]*?-->/g, '');
+      break;
+      
     case 'css':
-    
-    processed = processed.replace(/\/\*[\s\S]*?\*\
-    break;
-    
+      processed = processed.replace(/\/\*[\s\S]*?\*\//g, '');
+      break;
+      
     default:
-    
-    processed = processed.replace(/\/\/[^\n\r]*/g, '');
-    processed = processed.replace(/\/\*[\s\S]*?\*\
-    break;
+      processed = processed.replace(/\/\/[^\n\r]*/g, '');
+      processed = processed.replace(/\/\*[\s\S]*?\*\//g, '');
+      break;
   }
   
   return processed;
 }
+
 
 
 function formatCode(code, language) {
